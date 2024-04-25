@@ -2,6 +2,8 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY appRM550344.py .
+ARG APP_NAME
 
-CMD ["python", "appRM550344.py"]
+COPY ${APP_NAME} /app/
+
+CMD ["python", "/app/appRM550344.py"]
